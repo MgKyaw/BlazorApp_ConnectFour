@@ -1,4 +1,4 @@
-﻿@using ConnectFour
+@using ConnectFour
 @inject GameState State
 
 <HeadContent>
@@ -14,6 +14,13 @@
     </style>
 </HeadContent>
 
+<article>
+    @winnerMessage <button style="@ResetStyle" @onclick="ResetGame">Reset the game</button>
+    <br />
+    <span class="alert-danger">@errorMessage</span>
+    <span class="alert-info">@CurrentTurn</span>
+</article>
+
 <nav>
     @for (byte i = 0; i < 7; i++)
     {
@@ -21,13 +28,6 @@
         <span title="Click to play a piece" @onclick="() => PlayPiece(col)">🔽</span>
     }
 </nav>
-
-<article>
-    @winnerMessage <button style="@ResetStyle" @onclick="ResetGame">Reset the game</button>
-    <br />
-    <span class="alert-danger">@errorMessage</span>
-    <span class="alert-info">@CurrentTurn</span>
-</article>
 
 <div>
     <div class="board">
