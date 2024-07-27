@@ -29,7 +29,7 @@ public class GameState
 	/// </summary>
 	public int CurrentTurn { get { return TheBoard.Count(x => x != 0); } }
 
-	public static readonly List<int[]> WinningPlaces = new();
+	public static readonly List<int[]> WinningPlaces = [];
 
 	public static void CalculateWinningPlaces() 
 	{
@@ -42,12 +42,12 @@ public class GameState
 			byte checkCol = rowCol1;
 			while (checkCol <= rowColEnd-3)
 			{
-				WinningPlaces.Add(new int[] { 
+				WinningPlaces.Add([ 
 					checkCol, 
 					(byte)(checkCol + 1), 
 					(byte)(checkCol + 2), 
 					(byte)(checkCol + 3) 
-					});
+					]);
 				checkCol++;
 			}
 
@@ -62,12 +62,12 @@ public class GameState
 			byte checkRow = colRow1;
 			while (checkRow <= 14+col)
 			{
-				WinningPlaces.Add(new int[] {
+				WinningPlaces.Add([
 					checkRow,
 					(byte)(checkRow + 7),
 					(byte)(checkRow + 14),
 					(byte)(checkRow + 21)
-					});
+					]);
 				checkRow+=7;
 			}
 
@@ -83,12 +83,12 @@ public class GameState
 			byte checkPos = colRow1;
 			while (checkPos <= colRowEnd)
 			{
-				WinningPlaces.Add(new int[] {
+				WinningPlaces.Add([
 					checkPos,
 					(byte)(checkPos - 6),
 					(byte)(checkPos - 12),
 					(byte)(checkPos - 18)
-					});
+					]);
 				checkPos += 7;
 			}
 
@@ -104,12 +104,12 @@ public class GameState
 			byte checkPos = colRow1;
 			while (checkPos <= colRowEnd)
 			{
-				WinningPlaces.Add(new int[] {
+				WinningPlaces.Add([
 					checkPos,
 					(byte)(checkPos + 8),
 					(byte)(checkPos + 16),
 					(byte)(checkPos + 24)
-					});
+					]);
 				checkPos += 7;
 			}
 
