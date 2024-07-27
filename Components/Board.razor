@@ -1,4 +1,4 @@
-@using ConnectFour
+﻿@using ConnectFour
 @inject GameState State
 
 <HeadContent>
@@ -19,6 +19,7 @@
     <br />
     <span class="alert-danger">@errorMessage</span>
     <span class="alert-info">@CurrentTurn</span>
+    <span class="@CurrentTurnClass"></span>
 </article>
 
 <nav>
@@ -51,6 +52,8 @@
 
     private string CurrentTurn => (winnerMessage == string.Empty) ? $"Player {State.PlayerTurn}'s Turn" : "";
     private string ResetStyle => (winnerMessage == string.Empty) ? "display: none;" : "";
+
+    private string CurrentTurnClass => (winnerMessage == string.Empty) ? $"circle{State.PlayerTurn}" : "";
 
     private void PlayPiece(byte col)
     {

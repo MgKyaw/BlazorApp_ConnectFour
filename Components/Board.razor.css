@@ -222,3 +222,25 @@ span.container {
     transform: translateY(20.4em);
   }
 }
+
+.circle1 {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: var(--player1);
+  position: relative;
+  display: block;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.circle2 {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: var(--player2);
+  position: relative;
+  display: block;
+  z-index: 5;
+  pointer-events: none;
+}
