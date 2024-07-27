@@ -184,7 +184,7 @@ public class GameState
 		TheBoard = new List<int>(new int[42]);
 	}
 
-	private byte ConvertLandingSpotToRow(int landingSpot)
+	private static byte ConvertLandingSpotToRow(int landingSpot)
 	{
 
 		return (byte)(Math.Floor(landingSpot / (decimal)7) + 1);
